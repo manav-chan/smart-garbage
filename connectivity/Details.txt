@@ -1,0 +1,15 @@
+Percentage: -0.89
+Percentage: -0.95
+Percentage: -0.71
+Percentage: -0.53
+Percentage: -0.53
+Percentage: -0.53
+Percentage: -0.53
+Percentage: -0.53
+Percentage: -0.53
+Percentage: -0.53
+Percentage: 45.42
+Percentage: 71.55
+Dustbin Full: 71.55
+Dumpster ID: 1234
+Location: Dehradun
