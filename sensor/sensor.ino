@@ -38,8 +38,8 @@ void loop() {
 
   percentage = ((HEIGHT - distance) / HEIGHT) * 100;
 
-  // Serial.print("Percentage: ");
-  // Serial.println(percentage);
+  Serial.print(percentage);
+  Serial.println("%");
 
   if(percentage > 70) {
     flag1 = true;
@@ -50,13 +50,12 @@ void loop() {
   }
 
   if(flag1 && !flag2) {
-    Serial.print("Dustbin Full: ");
-    Serial.println(percentage);
-    Serial.println("Dumpster ID: 1234");
-    Serial.println("Location: Dehradun");
+    Serial.print("Dustbin Nearly Full! ");
+    Serial.print(percentage);
+    Serial.println("%");
     delay(600000);
 
     flag2 = true;
   }
-  delay(1000);
+  delay(10000);
 }
