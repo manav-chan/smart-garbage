@@ -22,7 +22,7 @@
             color: #ffffff;
         }
 
-        .bin1{
+        #bin1{
             margin: 0 auto;
             width: 300px;
             height: 230px;
@@ -49,7 +49,7 @@
 </head>
 <body>
     <h1>Smart Garbage Monitoring</h1>
-    <div class="bin1">
+    <div id="bin1">
         <h2>Bin 1</h2>
         <div class="bin1-status">
             <p>Percent Full:</p>
@@ -61,6 +61,12 @@
         let socket = io();
         socket.on('file update', (level) => {
             document.getElementById('output').innerText = level;
+            if(level[0] == 'D'){
+                document.getElementById('bin1').style.backgroundColor = 'red';
+            }
+            else{
+                document.getElementById('bin1').style.backgroundColor = '#5f6872';
+            }
         });
     </script>
     
