@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dumpster Status</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            margin: 20px;
+            /* background: url('bg.jpg') no-repeat center center fixed; */
+            background-color: black;
+            background-size: cover;
+            color: #ffffff;
+        }
+
+        h1 {
+            padding: 100px 100px 15px 100px;
+            font-size: 80px;
+            font-family: 'Arial', sans-serif;
+            color: #ffffff;
+        }
+
+        .bin1{
+            margin: 0 auto;
+            width: 300px;
+            height: 230px;
+            background-color: #5f6872;
+            border: 1px solid #6c757d;
+            border-radius: 10px;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #242729;
+            border: 1px solid #242729;
+            /* border-radius: 10px; */
+        }
+
+        p {
+            color: #ffffff;
+            font-size: 22px;
+            margin: 0;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h1>Smart Garbage Monitoring</h1>
+    <div class="bin1">
+        <h2>Bin 1</h2>
+        <div class="bin1-status">
+            <p>Percent Full:</p>
+            <p id="output"></p>
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        let socket = io();
+        socket.on('file update', (level) => {
+            document.getElementById('output').innerText = level;
+        });
+    </script>
+    
+</body>
+</html>
